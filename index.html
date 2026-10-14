@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You, My Love 💗</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="floating-hearts"></div>
+
+  <main class="app">
+
+    <!-- HALAMAN 1: PEMBUKA -->
+    <section class="screen active" id="home">
+      <div class="big-icon">💐</div>
+      <p class="eyebrow">A LITTLE GIFT FOR YOU</p>
+      <h1>Hai, sayangku 💗</h1>
+      <p class="desc">
+        aku punya sesuatu buat kamu.<br>
+        tapi kamu harus melewati beberapa hal dulu hehe
+      </p>
+      <button onclick="showScreen('game')">Mulai petualangan ♡</button>
+      <p class="tiny">made with love, just for you</p>
+    </section>
+
+    <!-- HALAMAN 2: GAME -->
+    <section class="screen" id="game">
+      <p class="eyebrow">LEVEL 1 · MINI GAME</p>
+      <h2>Tangkap 5 hati! 💕</h2>
+      <p class="desc">
+        klik hati yang muncul sampai kamu mengumpulkan 5 hati
+      </p>
+
+      <div class="score">Hati terkumpul: <span id="score">0</span>/5</div>
+
+      <div class="game-area" id="gameArea">
+        <p class="game-hint" id="gameHint">Tekan tombol di bawah untuk mulai!</p>
+      </div>
+
+      <button id="startGame" onclick="startGame()">Mulai main ❤️</button>
+      <button id="gameNext" class="hidden" onclick="showScreen('password')">
+        Lanjut ke kejutan 💌
+      </button>
+
+      <button class="back-btn" onclick="showScreen('home')">← Kembali</button>
+    </section>
+
+    <!-- HALAMAN 3: PASSWORD -->
+    <section class="screen" id="password">
+      <div class="big-icon">🔐</div>
+      <p class="eyebrow">LEVEL 2 · SECRET CODE</p>
+      <h2>Apa password-nya?</h2>
+      <p class="desc">masukin kode rahasia kita yaa 🤍</p>
+
+      <form id="passwordForm">
+        <input
+          type="password"
+          id="passInput"
+          inputmode="numeric"
+          maxlength="6"
+          placeholder="Masukkan 6 angka"
+          autocomplete="off"
+          required
+        >
+        <button type="submit">Buka kunci 💗</button>
+      </form>
+
+      <p id="passMessage" class="message"></p>
+      <button class="back-btn" onclick="showScreen('game')">← Kembali</button>
+    </section>
+
+    <!-- HALAMAN 4: ALBUM FOTO -->
+    <section class="screen" id="album">
+      <p class="eyebrow">OUR LITTLE MEMORIES</p>
+      <h2>Beberapa tentang kita 📸</h2>
+      <p class="desc">
+        beberapa foto yang pengen aku simpan sebagai kenangan
+      </p>
+
+      <div class="gallery">
+        <figure>
+          <img src="foto/1.jpeg" alt="Kenangan pertama" onerror="this.style.display='none'">
+          <figcaption>our little moment ♡</figcaption>
+        </figure>
+        <figure>
+          <img src="foto/2.jpeg" alt="Kenangan kedua" onerror="this.style.display='none'">
+          <figcaption>one of my favorites 🌷</figcaption>
+        </figure>
+        <figure>
+          <img src="foto/3.jpeg" alt="Kenangan ketiga" onerror="this.style.display='none'">
+          <figcaption>happy with you 💗</figcaption>
+        </figure>
+        <figure>
+          <img src="foto/4.jpeg" alt="Kenangan keempat" onerror="this.style.display='none'">
+          <figcaption>you and me ♡</figcaption>
+        </figure>
+        <figure>
+          <img src="foto/5.jpeg" alt="Kenangan kelima" onerror="this.style.display='none'">
+          <figcaption>more memories ✨</figcaption>
+        </figure>
+      </div>
+
+      <p class="tiny">foto bisa kamu ganti sesuai kenangan kalian</p>
+      <button onclick="showScreen('letter1')">Baca suratku 💌</button>
+      <button class="back-btn" onclick="showScreen('password')">← Kembali</button>
+    </section>
+
+    <!-- HALAMAN 5: SURAT BAGIAN 1 -->
+    <section class="screen letter-screen" id="letter1">
+      <p class="eyebrow">A LETTER FOR YOU · 01</p>
+      <div class="letter-icon">💌</div>
+      <h2>aku mau ngomong sesuatu...</h2>
+
+      <article class="letter">
+        sayang, sebenernya ada banyak hal yang pengen aku omongin ke kamu. aku sadar hubungan kita masih banyak kurangnya, terutama soal komunikasi kita.
+
+        kadang kita masih susah buat saling ngerti, ada yang pengen disampein tapi malah dipendem sendiri. akhirnya kita jadi salah paham, padahal mungkin semuanya bisa dibicarain baik-baik.
+
+        aku nggak mau kita terus kayak gini. aku pengen kita bisa lebih terbuka dan nggak harus nebak-nebak apa yang lagi dirasain satu sama lain.
+      </article>
+
+      <p class="page-number">01 / 03</p>
+      <div class="navigation">
+        <button class="secondary" onclick="showScreen('album')">← Foto</button>
+        <button onclick="showScreen('letter2')">Lanjut ♡</button>
+      </div>
+    </section>
+
+    <!-- HALAMAN 6: SURAT BAGIAN 2 -->
+    <section class="screen letter-screen" id="letter2">
+      <p class="eyebrow">A LETTER FOR YOU · 02</p>
+      <div class="letter-icon">🌷</div>
+      <h2>maaf buat semuanya ya</h2>
+
+      <article class="letter">
+        aku juga sadar aku masih banyak kurangnya. mungkin aku masih sering nggak peka, mungkin ada sikap aku yang bikin kamu kecewa, atau mungkin aku pernah bikin kamu ngerasa nggak dimengerti.
+
+        maaf ya sayang kalau selama ini aku belum bisa jadi pasangan yang kamu harapin. bukan berarti aku nggak peduli, aku cuma masih belajar buat ngerti kamu dengan lebih baik.
+
+        aku pengen kalau ada sesuatu yang bikin kamu sedih, kamu bisa cerita ke aku. kalau ada sikap aku yang nggak kamu suka, bilang aja. aku mau dengerin kamu dan belajar dari kesalahan aku.
+
+        aku juga bakal berusaha buat lebih terbuka, karena aku tahu hubungan ini nggak bisa diperbaiki kalau cuma salah satu yang berusaha.
+      </article>
+
+      <p class="page-number">02 / 03</p>
+      <div class="navigation">
+        <button class="secondary" onclick="showScreen('letter1')">← Sebelumnya</button>
+        <button onclick="showScreen('letter3')">Lanjut ♡</button>
+      </div>
+    </section>
+
+    <!-- HALAMAN 7: SURAT BAGIAN 3 -->
+    <section class="screen letter-screen" id="letter3">
+      <p class="eyebrow">A LETTER FOR YOU · 03</p>
+      <div class="letter-icon">❤️</div>
+      <h2>aku masih mau sama kamu</h2>
+
+      <article class="letter">
+        aku nggak berharap hubungan kita langsung jadi sempurna setelah ini. aku tahu kita masih bisa salah paham dan masih bisa bikin kesalahan, tapi aku pengen kita sama-sama belajar supaya semuanya bisa jadi lebih baik.
+
+        aku masih pengen denger cerita kamu, masih pengen punya banyak kenangan sama kamu, dan masih pengen jalanin hubungan ini bareng kamu. aku nggak mau kita jadi jauh cuma karena kita susah buat ngomongin apa yang kita rasain.
+
+        aku sayang kamu, dan aku harap kamu juga masih mau berusaha sama aku. kita benerin pelan-pelan aja yaa, nggak harus langsung sempurna. yang penting kita sama-sama mau belajar, saling ngerti, dan nggak gampang nyerah.
+
+        maaf ya buat semua kurangnya aku. aku masih belajar, tapi aku beneran mau berusaha jadi lebih baik buat kita.
+      </article>
+
+      <p class="page-number">03 / 03</p>
+      <button onclick="showScreen('ending')">Buka pesan terakhir 💗</button>
+      <button class="back-btn" onclick="showScreen('letter2')">← Sebelumnya</button>
+    </section>
+
+    <!-- HALAMAN 8: PENUTUP -->
+    <section class="screen" id="ending">
+      <div class="big-icon">🧸💐</div>
+      <p class="eyebrow">ONE LAST THING</p>
+      <h1>For you, always ♡</h1>
+      <p class="desc">
+        aku nggak minta kita jadi sempurna.<br>
+        aku cuma mau kita terus berusaha bersama.
+      </p>
+      <div class="final-message">
+        maaf ya, sayang<br>
+        <span>aku sayang kamu ❤️</span>
+      </div>
+      <button onclick="showScreen('home')">Lihat lagi dari awal ↻</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
